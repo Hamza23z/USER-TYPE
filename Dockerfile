@@ -1,17 +1,12 @@
 FROM python:3.9-slim
 
-#Set the working directory
-WORKDIR /app
+WORKDIR /usertype-image
 
 #python scripts
-COPY main.py .
-COPY user.py .
-COPY student.py .
-COPY employee.py .
-COPY applicant.py .
+COPY ./ /usertype-image/
 
 # Run main.py
 CMD ["python", "main.py"]
 #Terminal Commands
-#docker build -t UserType-app
-# docker run UserType-app 
+#docker image build -t usertype-app:1.0 ./
+# docker tag usertype-app:1.0 humxajunaid123/usertype-app:1.0
